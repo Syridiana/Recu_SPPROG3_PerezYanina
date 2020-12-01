@@ -75,24 +75,5 @@ class FacturaController{
         return $response;
     }
 
-    public function getTurno(Request $request, Response $response, $args)
-    {
 
-        $idTurno = $args['idTurno'] ?? '';
-
-        try{
-            $turno =  Turno::where('id', '=',  $idTurno)
-            ->update(['atendido' => true]);
-            
-        }catch (\Throwable $th) {
-            $result = new Resultado(false, "ERROR. No se pudo guardar", 500);
-            $response->getBody()->write(json_encode($result));
-        }
-
-        $result = new Resultado(true, "Turno actializado", 200);
-        $response->getBody()->write(json_encode($result));
-
-
-        return $response;
-    }
 }

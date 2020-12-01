@@ -123,7 +123,5 @@ class UsuarioController
         return $response;
     }
 
-    public static function updateAlumno($args)
-    {
-    }
+
 }
